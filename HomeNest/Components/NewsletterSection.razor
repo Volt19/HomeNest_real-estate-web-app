@@ -1,0 +1,68 @@
+<section class="newsletter-section">
+    <div class="section-container">
+        <div class="newsletter-card">
+            <div class="newsletter-card-content">
+                <h2>Абонирай се</h2>
+                <p>Получавайте първи най-добрите оферти и новини от имотния пазар във Варна.</p>
+                @if (_subscribed)
+                {
+                    <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border: 1px solid #b1dfbb; border-radius: 12px; padding: 16px 20px; color: #155724; font-weight: 500; display: flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#155724" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        @(_alreadySubscribed ? "Вече сте абониран/а за този имейл." : "Благодарим ви! Успешно се абонирахте.")
+                    </div>
+                }
+                else
+                {
+                    <div class="newsletter-card-form">
+                        <input type="email" @bind="_email" placeholder="Въведете имейл" @onkeydown="HandleKeyDown" />
+                        <button class="btn-submit-rounded" @onclick="Subscribe" disabled="@_loading">
+                            @(_loading ? "..." : "Изпрати")
+                        </button>
+                    </div>
+                    @if (!string.IsNullOrEmpty(_error))
+                    {
+                        <p style="color: #dc3545; font-size: 13px; margin-top: 8px;">@_error</p>
+                    }
+                }
+            </div>
+            <div class="newsletter-card-image">
+                <img src="images/newsletter-house.png" alt="Къща" />
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private string _email = "";
+    private bool _subscribed = false;
+    private bool _alreadySubscribed = false;
+    private bool _loading = false;
+    private string _error = "";
+
+    [Inject]
+    private NewsletterService NewsletterService { get; set; } = null!;
+
+    private async Task Subscribe()
+    {
+        _error = "";
+        if (string.IsNullOrWhiteSpace(_email))
+        {
+            _error = "Моля, въведете имейл адрес.";
+            return;
+        }
+
+        _loading = true;
+        var success = await NewsletterService.SubscribeAsync(_email);
+        _alreadySubscribed = !success && await NewsletterService.IsSubscribedAsync(_email);
+        _subscribed = true;
+        _loading = false;
+    }
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await Subscribe();
+        }
+    }
+}

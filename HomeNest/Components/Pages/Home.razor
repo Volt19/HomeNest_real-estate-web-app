@@ -1,0 +1,188 @@
+@page "/"
+@rendermode InteractiveServer
+@inject PropertyService PropertyService
+@inject NavigationManager Navigation
+
+<div class="landing-page">
+    @* Hero Section *@
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-image-wrapper">
+            <img src="images/027fa3abc1630d3c831da668a3e6c86410ce859a.png" alt="" class="hero-bg-image" />
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span>Твоето място,</span>
+                <span>твоето жилище</span>
+            </h1>
+            <p class="hero-subtitle">Your will have everything nearby supermarket, buses, station, the carmen neighborhood, etc</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" @onclick='() => Navigation.NavigateTo("/search")'>Потърси сега!</button>
+                <button class="btn-secondary" @onclick='() => Navigation.NavigateTo("/contact")'>Запитване</button>
+            </div>
+        </div>
+        <div class="hero-house">
+            <div class="house-mask">
+                <img src="images/6d3928c52aad0e192263b5d9f0fecd850eb7e959.png" alt="Modern House" />
+            </div>
+        </div>
+    </section>
+
+    @* Features Section *@
+    <section class="features">
+        <h2 class="section-title">Всичко на едно място</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <Icons.Messages />
+                <h3>Бърза връзка</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum in in vestibulum.</p>
+            </div>
+            <div class="feature-card">
+                <Icons.SmsTracking />
+                <h3>Лесно търсене</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum in in vestibulum.</p>
+            </div>
+            <div class="feature-card">
+                <Icons.Edit />
+                <h3>Регистрирай се</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum in in vestibulum.</p>
+            </div>
+        </div>
+    </section>
+
+    @* Recent Offers Section *@
+    <section class="offers">
+        <div class="offers-header">
+            <h2 class="section-title">Скорошни оферти</h2>
+            <div class="offers-nav">
+                <button class="nav-btn">
+                    <Icons.ArrowLeft stroke="#1F1F1F" />
+                </button>
+                <button class="nav-btn nav-btn-dark" @onclick='() => Navigation.NavigateTo("/search")'>
+                    <Icons.ArrowRight stroke="#FEFEFF" />
+                </button>
+            </div>
+        </div>
+        <div class="offers-grid">
+            @if (_recentProperties.Any())
+            {
+                @foreach (var property in _recentProperties)
+                {
+                    <div class="property-card-landing" @onclick='() => Navigation.NavigateTo($"/property/{property.Id}")' style="cursor: pointer;">
+                        <div class="card-image">
+                            <img src="@property.Image" alt="@property.Title" />
+                            <div class="card-gradient"></div>
+                        </div>
+                        <h4>@property.Title</h4>
+                        <p>@property.Description</p>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="property-card-landing">
+                    <div class="card-image">
+                        <img src="images/property-offer-1.jpg" alt="Property" />
+                        <div class="card-gradient"></div>
+                    </div>
+                    <h4>Sobha Hearland II Villas</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum.</p>
+                </div>
+                <div class="property-card-landing">
+                    <div class="card-image">
+                        <img src="images/property-offer-2.jpg" alt="Property" />
+                        <div class="card-gradient"></div>
+                    </div>
+                    <h4>Sobha Hearland II Villas</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum.</p>
+                </div>
+                <div class="property-card-landing">
+                    <div class="card-image">
+                        <img src="images/property-offer-3.jpg" alt="Property" />
+                        <div class="card-gradient"></div>
+                    </div>
+                    <h4>Sobha Hearland II Villas</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum.</p>
+                </div>
+            }
+        </div>
+    </section>
+
+    @* Testimonials Section *@
+    <section class="testimonials">
+        <div class="testimonials-header">
+            <h2 class="section-title">
+                Вашият <span class="highlight">глас</span> е важен за нас!
+            </h2>
+            <p class="subtitle">Ето какво казват нашите клиенти</p>
+            <div class="testimonials-nav">
+                <button class="nav-btn">
+                    <Icons.ArrowLeft stroke="#1F1F1F" />
+                </button>
+                <button class="nav-btn nav-btn-dark">
+                    <Icons.ArrowRight stroke="#FEFEFF" />
+                </button>
+            </div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="avatar">
+                    <img src="images/fc2cab01ccfdb18be7e6bb0c5f49da8e58d5007d.png" alt="Ивана Георгиева" />
+                </div>
+                <p class="quote">"Изключителни професионалисти!"</p>
+                <div class="rating">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <Icons.Star />
+                    }
+                    <span>5.00</span>
+                </div>
+                <p class="name">Ивана Георгиева</p>
+                <p class="source">Google Reviews</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="avatar">
+                    <img src="images/8abb13ca791701da71471044ad0ef5906dbf0b45.png" alt="Патрисия Станимирова" />
+                </div>
+                <p class="quote">"Успях да си намеря страхотно жилище на добра цена благодарение на HomeNest!"</p>
+                <div class="rating">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <Icons.Star />
+                    }
+                    <span>5.00</span>
+                </div>
+                <p class="name">Патрисия Станимирова</p>
+                <p class="source">Facebook</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="avatar">
+                    <img src="images/68d09acbf8b575c09ce2cf04ddf1465931086cb3.png" alt="Атанас Михов" />
+                </div>
+                <p class="quote">"Най-добрите оферти в града! Най-добрите на пазара са!"</p>
+                <div class="rating">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <Icons.Star />
+                    }
+                    <span>5.00</span>
+                </div>
+                <p class="name">Атанас Михов</p>
+                <p class="source">Google Reviews</p>
+            </div>
+        </div>
+    </section>
+
+    @* Newsletter Section *@
+    <NewsletterSection />
+</div>
+
+@code {
+    private List<Property> _recentProperties = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _recentProperties = await PropertyService.GetAllPropertiesAsync();
+        _recentProperties = _recentProperties.Take(3).ToList();
+    }
+}

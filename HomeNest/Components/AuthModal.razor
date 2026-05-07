@@ -1,0 +1,78 @@
+@if (IsOpen)
+{
+    <div class="auth-modal-overlay" @onclick="Close">
+        <div class="auth-modal" @onclick:stopPropagation="true">
+            <button class="auth-modal-close" @onclick="Close" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+
+            @if (_mode == "login")
+            {
+                <h2 style="font-size: 24px; font-weight: 700; color: var(--color-text); margin-bottom: 8px; text-align: center;">Вход</h2>
+                <p style="color: var(--color-text-light); text-align: center; margin-bottom: 24px;">Влезте във вашия акаунт</p>
+                <div class="contact-form-group">
+                    <label>Имейл</label>
+                    <input type="email" placeholder="your@email.com" />
+                </div>
+                <div class="contact-form-group">
+                    <label>Парола</label>
+                    <input type="password" placeholder="••••••••" />
+                </div>
+                <button class="btn-primary" style="width: 100%; margin-top: 8px;">Вход</button>
+                <p style="text-align: center; margin-top: 16px; color: var(--color-text-light); font-size: 14px;">
+                    Нямате акаунт? <button class="auth-link" @onclick="ShowRegister">Регистрация</button>
+                </p>
+            }
+            else
+            {
+                <h2 style="font-size: 24px; font-weight: 700; color: var(--color-text); margin-bottom: 8px; text-align: center;">Регистрация</h2>
+                <p style="color: var(--color-text-light); text-align: center; margin-bottom: 24px;">Създайте нов акаунт</p>
+                <div class="contact-form-group">
+                    <label>Име</label>
+                    <input type="text" placeholder="Вашето име" />
+                </div>
+                <div class="contact-form-group">
+                    <label>Имейл</label>
+                    <input type="email" placeholder="your@email.com" />
+                </div>
+                <div class="contact-form-group">
+                    <label>Парола</label>
+                    <input type="password" placeholder="••••••••" />
+                </div>
+                <button class="btn-primary" style="width: 100%; margin-top: 8px;">Регистрация</button>
+                <p style="text-align: center; margin-top: 16px; color: var(--color-text-light); font-size: 14px;">
+                    Имате акаунт? <button class="auth-link" @onclick="ShowLogin">Вход</button>
+                </p>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool IsOpen { get; set; }
+    [Parameter] public EventCallback<bool> IsOpenChanged { get; set; }
+    [Parameter] public string InitialMode { get; set; } = "login";
+
+    private string _mode = "login";
+
+    protected override void OnParametersSet()
+    {
+        _mode = InitialMode;
+    }
+
+    private void ShowRegister()
+    {
+        _mode = "register";
+    }
+
+    private void ShowLogin()
+    {
+        _mode = "login";
+    }
+
+    private async Task Close()
+    {
+        IsOpen = false;
+        await IsOpenChanged.InvokeAsync(false);
+    }
+}

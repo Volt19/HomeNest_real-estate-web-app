@@ -1,0 +1,92 @@
+@page "/login"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject UserStateService UserState
+
+<PageTitle>HomeNest - Вход</PageTitle>
+
+<div class="auth-page">
+    <div class="auth-card">
+        <div class="auth-header">
+            <a href="/" class="logo-link">
+                <img src="images/swallow.png" alt="HomeNest" class="auth-logo" />
+                <span>HomeNest</span>
+            </a>
+            <h1>Вход в акаунта</h1>
+            <p>Влезте във вашия акаунт, за да управлявате имотите и любимите си оферти.</p>
+        </div>
+
+        <div class="auth-form">
+            <div class="contact-form-group">
+                <label>Имейл</label>
+                <input type="email" @bind="_email" placeholder="your@email.com" @onkeydown="HandleKeyDown" />
+            </div>
+            <div class="contact-form-group">
+                <label>Парола</label>
+                <input type="password" @bind="_password" placeholder="••••••••" @onkeydown="HandleKeyDown" />
+            </div>
+
+            @if (!string.IsNullOrEmpty(_error))
+            {
+                <div class="auth-error">@_error</div>
+            }
+
+            <button class="btn-primary" style="width: 100%; margin-top: 8px;" @onclick="HandleLogin">
+                @if (_loading)
+                {
+                    <span>Зареждане...</span>
+                }
+                else
+                {
+                    <span>Вход</span>
+                }
+            </button>
+
+            <p class="auth-footer">
+                Нямате акаунт? <a href="/register">Регистрация</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    public string? ReturnUrl { get; set; }
+
+    private string _email = "";
+    private string _password = "";
+    private string _error = "";
+    private bool _loading = false;
+
+    private async Task HandleLogin()
+    {
+        _error = "";
+        if (string.IsNullOrWhiteSpace(_email) || string.IsNullOrWhiteSpace(_password))
+        {
+            _error = "Моля, попълнете всички полета.";
+            return;
+        }
+
+        _loading = true;
+        var success = await UserState.LoginAsync(_email, _password);
+        _loading = false;
+
+        if (success)
+        {
+            var destination = string.IsNullOrWhiteSpace(ReturnUrl) ? "/" : ReturnUrl;
+            Navigation.NavigateTo(destination);
+        }
+        else
+        {
+            _error = "Невалиден имейл или парола.";
+        }
+    }
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await HandleLogin();
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@code {
+    [Parameter]
+    public string Stroke { get; set; } = "#4C5F8A";
+}
+
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <path d="M8 40L12 28L32 8L40 16L20 36L8 40Z" stroke="@Stroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 12L36 20" stroke="@Stroke" stroke-width="2" stroke-linecap="round"/>
+</svg>

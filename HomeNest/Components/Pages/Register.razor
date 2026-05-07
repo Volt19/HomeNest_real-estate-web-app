@@ -1,0 +1,137 @@
+@page "/register"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject UserStateService UserState
+
+<PageTitle>HomeNest - Регистрация</PageTitle>
+
+<div class="auth-page">
+    <div class="auth-card">
+        <div class="auth-header">
+            <a href="/" class="logo-link">
+                <img src="images/swallow.png" alt="HomeNest" class="auth-logo" />
+                <span>HomeNest</span>
+            </a>
+            <h1>Създай акаунт</h1>
+            <p>Регистрирайте се безплатно и започнете да публикувате имоти или запазвайте любими оферти.</p>
+        </div>
+
+        <div class="auth-form">
+            <div class="contact-form-group">
+                <label>Име</label>
+                <input type="text" @bind="_name" placeholder="Вашето име" @onkeydown="HandleKeyDown" />
+            </div>
+            <div class="contact-form-group">
+                <label>Имейл</label>
+                <input type="email" @bind="_email" placeholder="your@email.com" @onkeydown="HandleKeyDown" />
+            </div>
+            <div class="contact-form-group">
+                <label>Телефон</label>
+                <input type="tel" @bind="_phone" placeholder="+359 88 888 8888" @onkeydown="HandleKeyDown" />
+            </div>
+            <div class="contact-form-group">
+                <label>Парола</label>
+                <input type="password" @bind="_password" placeholder="••••••••" @onkeydown="HandleKeyDown" />
+                <span style="font-size: 12px; color: var(--color-text-light);">Минимум 6 символа</span>
+            </div>
+            <div class="contact-form-group">
+                <label>Потвърди парола</label>
+                <input type="password" @bind="_confirmPassword" placeholder="••••••••" @onkeydown="HandleKeyDown" />
+            </div>
+
+            @if (!string.IsNullOrEmpty(_error))
+            {
+                <div class="auth-error">@_error</div>
+            }
+
+            <button class="btn-primary" style="width: 100%; margin-top: 8px;" @onclick="HandleRegister">
+                @if (_loading)
+                {
+                    <span>Зареждане...</span>
+                }
+                else
+                {
+                    <span>Регистрация</span>
+                }
+            </button>
+
+            <p class="auth-footer">
+                Имате акаунт? <a href="/login">Вход</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string _name = "";
+    private string _email = "";
+    private string _phone = "";
+    private string _password = "";
+    private string _confirmPassword = "";
+    private string _error = "";
+    private bool _loading = false;
+
+    private async Task HandleRegister()
+    {
+        _error = "";
+
+        if (string.IsNullOrWhiteSpace(_name) || string.IsNullOrWhiteSpace(_email) || string.IsNullOrWhiteSpace(_password))
+        {
+            _error = "Моля, попълнете всички задължителни полета.";
+            return;
+        }
+
+        if (!IsValidEmail(_email))
+        {
+            _error = "Моля, въведете валиден имейл адрес.";
+            return;
+        }
+
+        if (_password != _confirmPassword)
+        {
+            _error = "Паролите не съвпадат.";
+            return;
+        }
+
+        if (_password.Length < 6)
+        {
+            _error = "Паролата трябва да е поне 6 символа.";
+            return;
+        }
+
+        _loading = true;
+        var success = await UserState.RegisterAsync(_name, _email, _phone, _password);
+        _loading = false;
+
+        if (success)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            _error = "Имейлът вече е регистриран.";
+        }
+    }
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await HandleRegister();
+        }
+    }
+
+    private static bool IsValidEmail(string email)
+    {
+        if (string.IsNullOrWhiteSpace(email)) return false;
+        try
+        {
+            var addr = new System.Net.Mail.MailAddress(email);
+            return addr.Address == email;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+}

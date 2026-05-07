@@ -1,0 +1,164 @@
+@page "/my-listings"
+@rendermode InteractiveServer
+@inject PropertyService PropertyService
+@inject UserStateService UserState
+@inject NavigationManager Navigation
+
+<PageTitle>HomeNest - Мои обяви</PageTitle>
+
+<div class="my-listings-page">
+    <div class="section-container">
+        <div class="my-listings-header">
+            <div>
+                <h1 class="my-listings-title">Мои обяви</h1>
+                <p class="my-listings-subtitle">Управлявайте публикуваните от вас имоти.</p>
+            </div>
+            <a href="/property/publish" class="btn-primary">+ Нова обява</a>
+        </div>
+
+        @if (_loading)
+        {
+            <div style="text-align: center; padding: 64px 24px;">
+                <div class="filter-spinner" style="margin: 0 auto;"></div>
+                <p style="margin-top: 16px; color: var(--color-text-light);">Зареждане...</p>
+            </div>
+        }
+        else if (!UserState.IsLoggedIn)
+        {
+            <div class="empty-state" style="background: var(--color-white); border-radius: var(--radius-xl); padding: 64px 24px; margin-top: 32px;">
+                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <p class="empty-title">Влезте в акаунта си</p>
+                <p class="empty-subtitle">Публикувайте имоти и управлявайте вашите обяви.</p>
+                <a href="/login?returnUrl=/my-listings" class="btn-primary" style="margin-top: 16px; display: inline-flex;">Вход</a>
+            </div>
+        }
+        else if (!_myProperties.Any())
+        {
+            <div class="empty-state" style="background: var(--color-white); border-radius: var(--radius-xl); padding: 64px 24px; margin-top: 32px;">
+                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <p class="empty-title">Нямате публикувани обяви</p>
+                <p class="empty-subtitle">Започнете да публикувате имоти и ги управлявайте от тук.</p>
+                <a href="/property/publish" class="btn-primary" style="margin-top: 16px; display: inline-flex;">Публикувай имот</a>
+            </div>
+        }
+        else
+        {
+            <div class="properties-grid" style="margin-top: 32px;">
+                @foreach (var property in _myProperties)
+                {
+                    <div class="property-card-search">
+                        <div class="property-image-wrap">
+                            <img src="@property.Image" alt="@property.Title" loading="lazy" />
+                            <div class="property-badge">@property.Type</div>
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">@property.Title</h3>
+                            <p class="property-desc">@property.Description</p>
+                            <div class="property-meta">
+                                <span class="meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5" /></svg>
+                                    @property.Area кв.м
+                                </span>
+                                <span class="meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 20h10M6 4h12a1 1 0 011 1v14a1 1 0 01-1 1H6a1 1 0 01-1-1V5a1 1 0 011-1z" /></svg>
+                                    Етаж @property.Floor
+                                </span>
+                                <span class="meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v18M19 3v18M5 12h14" /></svg>
+                                    @property.Rooms @(property.Rooms == 1 ? "стая" : "стаи")
+                                </span>
+                            </div>
+                            <div class="property-footer">
+                                <a href="/property/@property.Id" class="btn-secondary-sm">Виж повече</a>
+                                <div style="display: flex; gap: 8px; align-items: center;">
+                                    <a href="/property/edit/@property.Id" class="btn-edit" aria-label="Редактирай" title="Редактирай">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                                    </a>
+                                    <button class="btn-delete" @onclick="() => ConfirmDelete(property.Id)" aria-label="Изтрий">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@* Delete Confirmation Modal *@
+@if (_showDeleteConfirm)
+{
+    <div class="auth-modal-overlay" @onclick="CancelDelete">
+        <div class="auth-modal" @onclick:stopPropagation="true">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Изтриване на обява</h3>
+            <p style="color: var(--color-text-light); margin-bottom: 24px;">Сигурни ли сте, че искате да изтриете тази обява? Действието е необратимо.</p>
+            <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                <button class="btn-secondary" @onclick="CancelDelete">Отказ</button>
+                <button class="btn-primary" style="background: #dc3545; box-shadow: none;" @onclick="ExecuteDelete">Изтрий</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Property> _myProperties = new();
+    private bool _loading = true;
+    private bool _showDeleteConfirm = false;
+    private int _deleteId = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        UserState.OnChange += OnUserStateChanged;
+        await LoadListingsAsync();
+    }
+
+    public void Dispose()
+    {
+        UserState.OnChange -= OnUserStateChanged;
+    }
+
+    private void OnUserStateChanged()
+    {
+        _ = InvokeAsync(async () =>
+        {
+            await LoadListingsAsync();
+            StateHasChanged();
+        });
+    }
+
+    private async Task LoadListingsAsync()
+    {
+        _loading = true;
+        _myProperties = await UserState.GetMyListingsAsync();
+        _loading = false;
+    }
+
+    private void ConfirmDelete(int id)
+    {
+        _deleteId = id;
+        _showDeleteConfirm = true;
+    }
+
+    private void CancelDelete()
+    {
+        _showDeleteConfirm = false;
+        _deleteId = 0;
+    }
+
+    private async Task ExecuteDelete()
+    {
+        _showDeleteConfirm = false;
+        if (_deleteId > 0 && UserState.IsLoggedIn)
+        {
+            await PropertyService.RemovePropertyAsync(_deleteId, UserState.UserId);
+            await LoadListingsAsync();
+        }
+        _deleteId = 0;
+    }
+}

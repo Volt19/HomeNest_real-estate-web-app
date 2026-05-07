@@ -1,0 +1,146 @@
+@page "/admin"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject UserStateService UserState
+@inject ContactService ContactService
+@inject NewsletterService NewsletterService
+@inject PropertyService PropertyService
+
+<PageTitle>HomeNest - Админ панел</PageTitle>
+
+<div class="admin-page">
+    <div class="section-container">
+        <h1 class="profile-title">Админ панел</h1>
+
+        @if (!UserState.IsLoggedIn || !UserState.IsAdmin)
+        {
+            <div class="empty-state" style="background: var(--color-white); border-radius: var(--radius-xl); padding: 64px 24px; margin-top: 32px;">
+                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <p class="empty-title">Достъпът е ограничен</p>
+                <p class="empty-subtitle">Тази страница е достъпна само за администратори.</p>
+                <a href="/" class="btn-primary" style="margin-top: 16px; display: inline-flex;">Начало</a>
+            </div>
+        }
+        else
+        {
+            <div class="profile-stats" style="margin-bottom: 48px;">
+                <div class="stat-card">
+                    <div class="stat-value" style="color: var(--color-primary);">@_propertyCount</div>
+                    <div class="stat-label">Общо имоти</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" style="color: var(--color-primary);">@_messageCount</div>
+                    <div class="stat-label">Съобщения</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" style="color: var(--color-primary);">@_subscriberCount</div>
+                    <div class="stat-label">Абонати</div>
+                </div>
+            </div>
+
+            <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">Съобщения от контакт форма</h2>
+            @if (!_messages.Any())
+            {
+                <p style="color: var(--color-text-light); margin-bottom: 48px;">Няма получени съобщения.</p>
+            }
+            else
+            {
+                <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px;">
+                    @foreach (var msg in _messages)
+                    {
+                        <div style="background: var(--color-white); border-radius: var(--radius-xl); padding: 24px; border: 1px solid var(--color-border);">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                                <div>
+                                    <h3 style="font-size: 18px; font-weight: 600;">@msg.Name</h3>
+                                    <p style="font-size: 14px; color: var(--color-text-light);">@msg.Email · @msg.Phone</p>
+                                </div>
+                                <div style="display: flex; gap: 8px; align-items: center;">
+                                    @if (!msg.IsRead)
+                                    {
+                                        <span style="background: var(--color-primary); color: white; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px;">Ново</span>
+                                    }
+                                    <span style="font-size: 12px; color: var(--color-text-light);">@msg.CreatedAt.ToLocalTime().ToString("g")</span>
+                                    <button class="btn-delete" @onclick="() => DeleteMessage(msg.Id)" title="Изтрий">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <p style="color: var(--color-text); line-height: 1.6;">@msg.Message</p>
+                            @if (!msg.IsRead)
+                            {
+                                <button class="btn-secondary-sm" style="margin-top: 12px;" @onclick="() => MarkAsRead(msg.Id)">Маркирай като прочетено</button>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+
+            <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">Абонати за бюлетин</h2>
+            @if (!_subscribers.Any())
+            {
+                <p style="color: var(--color-text-light);">Няма абонати.</p>
+            }
+            else
+            {
+                <div style="background: var(--color-white); border-radius: var(--radius-xl); padding: 24px; border: 1px solid var(--color-border);">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--color-border);">
+                                <th style="text-align: left; padding: 12px; font-size: 14px; color: var(--color-text-light);">Имейл</th>
+                                <th style="text-align: left; padding: 12px; font-size: 14px; color: var(--color-text-light);">Дата на абониране</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var sub in _subscribers)
+                            {
+                                <tr style="border-bottom: 1px solid var(--color-border);">
+                                    <td style="padding: 12px;">@sub.Email</td>
+                                    <td style="padding: 12px; color: var(--color-text-light);">@sub.SubscribedAt.ToLocalTime().ToString("g")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private List<ContactMessage> _messages = new();
+    private List<NewsletterSubscriber> _subscribers = new();
+    private int _propertyCount = 0;
+    private int _messageCount = 0;
+    private int _subscriberCount = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!UserState.IsLoggedIn || !UserState.IsAdmin)
+            return;
+
+        await LoadDataAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        _messages = await ContactService.GetAllAsync();
+        _subscribers = await NewsletterService.GetAllAsync();
+        _propertyCount = await PropertyService.GetPropertyCountAsync();
+        _messageCount = _messages.Count;
+        _subscriberCount = _subscribers.Count;
+    }
+
+    private async Task MarkAsRead(int id)
+    {
+        await ContactService.MarkAsReadAsync(id);
+        await LoadDataAsync();
+    }
+
+    private async Task DeleteMessage(int id)
+    {
+        await ContactService.DeleteAsync(id);
+        await LoadDataAsync();
+    }
+}

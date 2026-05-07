@@ -1,0 +1,69 @@
+@* Arrow Right Icon *@
+@code {
+    [Parameter] public string? Class { get; set; }
+    [Parameter] public string StrokeColor { get; set; } = "#FEFEFF";
+}
+
+<svg class="@Class" fill="none" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+    <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" 
+          stroke="@StrokeColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+</svg>
+
+@code {
+    public static RenderFragment ArrowRight(string? className = null, string stroke = "#FEFEFF") => __builder =>
+    {
+        <svg class="@className" fill="none" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+            <path d="M8.91 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.91 4.08" 
+                  stroke="@stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </svg>
+    };
+
+    public static RenderFragment ArrowLeft(string? className = null, string stroke = "#1F1F1F") => __builder =>
+    {
+        <svg class="@className" fill="none" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+            <path d="M15 19.92L8.48 13.4C7.71 12.63 7.71 11.37 8.48 10.6L15 4.08" 
+                  stroke="@stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </svg>
+    };
+
+    public static RenderFragment Messages(string? className = null) => __builder =>
+    {
+        <svg class="@className" fill="none" viewBox="0 0 75 75" style="width: 75px; height: 75px;">
+            <path d="M56.1875 33.7188V46.2188C56.1875 47.0313 56.1563 47.8125 56.0625 48.5625C55.3438 57 50.375 61.1875 41.2188 61.1875H39.9688C39.1875 61.1875 38.4375 61.5625 37.9687 62.1875L34.2188 67.1875C32.5625 69.4062 29.875 69.4062 28.2187 67.1875L24.4687 62.1875C24.0625 61.6562 23.1563 61.1875 22.4688 61.1875H21.2188C11.25 61.1875 6.25 58.7188 6.25 46.2188V33.7188C6.25 24.5625 10.4688 19.5938 18.875 18.875C19.625 18.7813 20.4063 18.75 21.2188 18.75H41.2188C51.1875 18.75 56.1875 23.75 56.1875 33.7188Z" 
+                  stroke="#39383A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+            <path d="M68.6875 21.2188V33.7188C68.6875 42.9063 64.4688 47.8438 56.0625 48.5625C56.1563 47.8125 56.1875 47.0313 56.1875 46.2188V33.7188C56.1875 23.75 51.1875 18.75 41.2188 18.75H21.2188C20.4063 18.75 19.625 18.7813 18.875 18.875C19.5938 10.4688 24.5625 6.25 33.7188 6.25H53.7188C63.6875 6.25 68.6875 11.25 68.6875 21.2188Z" 
+                  stroke="#39383A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+        </svg>
+    };
+
+    public static RenderFragment SmsTracking(string? className = null) => __builder =>
+    {
+        <svg class="@className" fill="none" viewBox="0 0 75 75" style="width: 75px; height: 75px;">
+            <path d="M6.25 26.5625C6.25 15.625 12.5 10.9375 21.875 10.9375H53.125C62.5 10.9375 68.75 15.625 68.75 26.5625V48.4375C68.75 59.375 62.5 64.0625 53.125 64.0625H21.875" 
+                  stroke="#FF791A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+            <path d="M53.125 28.125L43.3437 35.9375C40.125 38.5 34.8437 38.5 31.625 35.9375L21.875 28.125" 
+                  stroke="#FF791A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+            <path d="M6.25 51.5625H25" stroke="#FF791A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+            <path d="M6.25 39.0625H15.625" stroke="#FF791A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+        </svg>
+    };
+
+    public static RenderFragment Edit(string? className = null) => __builder =>
+    {
+        <svg class="@className" fill="none" viewBox="0 0 75 75" style="width: 75px; height: 75px;">
+            <path d="M41.4375 11.25L15.7813 38.4062C14.8125 39.4375 13.875 41.4688 13.6875 42.875L12.5313 53C12.125 56.6562 14.75 59.1563 18.375 58.5313L28.4375 56.8125C29.8438 56.5625 31.8125 55.5313 32.7812 54.4688L58.4375 27.3125C62.875 22.625 64.875 17.2813 57.9687 10.75C51.0937 4.28125 45.875 6.5625 41.4375 11.25Z" 
+                  stroke="#3741B5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+            <path d="M37.1562 15.7813C38.5 24.4063 45.5 31 54.1875 31.875" 
+                  stroke="#3741B5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+            <path d="M9.375 68.75H65.625" stroke="#3741B5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+        </svg>
+    };
+
+    public static RenderFragment Star(string? className = null) => __builder =>
+    {
+        <svg class="@className" fill="none" viewBox="0 0 15.4855 15.2616" style="width: 16.579px; height: 17.316px;">
+            <path d="M7.74274 12.8966L3.51944 15.1995C3.15373 15.3989 2.71882 15.0899 2.78677 14.6789L3.59799 9.77329L0.145055 6.28236C-0.142563 5.99157 0.0215923 5.49728 0.426023 5.43633L5.18114 4.71968L7.29125 0.285163C7.47217 -0.0950546 8.01331 -0.0950544 8.19423 0.285164L10.3043 4.71968L15.0595 5.43633C15.4639 5.49728 15.628 5.99157 15.3404 6.28236L11.8875 9.77329L12.6987 14.6789C12.7667 15.0899 12.3317 15.3989 11.966 15.1995L7.74274 12.8966Z" 
+                  fill="#FF791A"/>
+        </svg>
+    };
+}

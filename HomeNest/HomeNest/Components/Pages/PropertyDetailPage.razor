@@ -1,0 +1,1015 @@
+@page "/property/{id}"
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+
+<PageTitle>Апартамент - HomeNest</PageTitle>
+
+
+<div class="about-page">
+    @* Navbar *@
+@*     <nav class="search-navbar">
+        <div class="search-navbar-inner">
+            <a href="/" class="search-logo">
+                <svg class="search-logo-icon" viewBox="0 0 42 19" fill="none">
+                    <path d="M38.37 0C38.42 0.02 38.47 0.05 38.53 0.07C38.07 0.46 37.61 0.84 37.12 1.19C36.96 1.3 36.81 1.41 36.65 1.52C34.99 2.77 33.18 3.86 31.28 4.79C31.09 4.88 30.9 4.98 30.71 5.08C29.61 5.62 28.48 6.07 27.34 6.51C27.22 6.55 27.1 6.6 26.98 6.66C27.04 6.66 27.1 6.67 27.17 6.67C27.46 6.69 27.75 6.7 28.04 6.72C28.14 6.73 28.24 6.73 28.34 6.74C28.91 6.78 29.46 6.83 30.02 6.92C30.4 6.97 30.79 7.01 31.17 7.06C33.66 7.34 36.19 7.69 38.6 8.35C38.98 8.45 39.36 8.53 39.74 8.61C40.51 8.78 41.25 9.01 42 9.25V9.32C41.23 9.28 40.48 9.16 39.73 9.04C37.19 8.66 34.63 8.36 32.07 8.21C32 8.21 31.93 8.2 31.86 8.2C31.25 8.16 30.65 8.15 30.05 8.14C29.98 8.13 29.91 8.13 29.84 8.13C27.13 8.09 27.13 8.09 24.43 8.27C24.37 8.28 24.32 8.28 24.26 8.29C23.26 8.4 22.49 8.66 21.6 9.08C21.52 9.11 21.44 9.15 21.35 9.19C21.15 9.28 20.96 9.38 20.76 9.47C20.89 9.44 21.02 9.42 21.16 9.39C21.13 9.43 21.1 9.47 21.06 9.51C21.02 9.56 20.98 9.61 20.93 9.67C20.89 9.72 20.85 9.77 20.81 9.82C20.49 10.22 20.37 10.49 20.39 10.99C20.63 12.3 21.79 13.21 22.91 13.95C26.2 16.08 30.14 17.65 34 18.67C34.14 18.7 34.27 18.75 34.41 18.79C34.43 18.84 34.46 18.89 34.49 18.94C34.38 18.94 34.27 18.94 34.16 18.94C34.1 18.94 34.04 18.94 33.98 18.94C33.76 18.94 33.76 18.94 33.51 18.9C33.27 18.87 33.04 18.85 32.8 18.84C31.54 18.77 30.28 18.64 29.02 18.5C28.94 18.49 28.86 18.48 28.77 18.48C27.18 18.3 25.59 18.09 24.03 17.77" fill="#0A0B0D" />
+                    <path d="M9.02 8.88C9.56 9.08 10.1 9.26 10.64 9.44C10.79 9.49 10.94 9.53 11.09 9.58C12.16 9.92 13.19 10.1 14.33 10.09C14.5 10.09 14.67 10.09 14.84 10.09C16.25 10.09 17.56 9.73 18.89 9.33C21.59 8.53 21.59 8.53 22.62 8.51C22.43 8.69 22.25 8.8 22 8.9C21.93 8.94 21.86 8.97 21.79 9C21.64 9.07 21.49 9.13 21.34 9.2C21.27 9.23 21.2 9.26 21.13 9.29C21.06 9.32 21 9.35 20.93 9.38C20.76 9.46 20.76 9.46 20.64 9.58C18.77 11.28 13.9 11.87 11.44 11.86C10.44 11.86 9.52 11.76 8.56 11.47C8.49 11.45 8.43 11.43 8.36 11.4C6.85 10.94 4.79 10.06 3.88 8.8V8.66C3.88 8.66 3.96 8.51 3.96 8.51C5.36 7.53 7.57 8.35 9.02 8.88Z" fill="#EA6028" />
+                </svg>
+                <span class="search-logo-text">HomeNest</span>
+            </a>
+            <div class="search-nav-links">
+                <a href="/search">Търси</a>
+                <a href="/about">За нас</a>
+                <a href="#">Екип</a>
+                <a href="#">Контакт</a>
+                <a href="#">Listings</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn-pill btn-pill-outline">Sign in</button>
+                <button class="btn-pill btn-pill-solid">Log in</button>
+            </div>
+        </div>
+    </nav> *@
+
+
+
+        <div class="about-content">
+            <div class="section-container">
+                @* Header Row *@
+                <div class="about-header">
+                    <h1 class="about-title">@property.Title</h1>
+                    <div class="about-actions">
+                        <button class="icon-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#39383A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </button>
+                        <button class="icon-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#39383A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" />
+                            </svg>
+                        </button>
+                        <button class="btn-rent-buy">Наеми/Купи</button>
+                    </div>
+                </div>
+
+                @* Image Gallery *@
+                <div class="gallery">
+                    <div class="gallery-item"><img src="images/gallery-1.jpg" alt="Living room" /></div>
+                    <div class="gallery-item"><img src="images/gallery-2.jpg" alt="Bedroom" /></div>
+                    <div class="gallery-item gallery-last">
+                        <img src="images/gallery-3.jpg" alt="Bathroom" />
+                        <button class="gallery-next">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                @* Stats Bar *@
+                <div class="stats-bar">
+                    <div class="stat-card">
+                        <div class="stat-value">@property.Price€</div>
+                        <div class="stat-label">Цена</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">@property.Area м²</div>
+                        <div class="stat-label">Площ</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">@property.District</div>
+                        <div class="stat-label">Район/Квартал</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">@property.Rooms @(GetRoomLabel(property.Rooms))</div>
+                        <div class="stat-label">Брой стаи на имота</div>
+                    </div>
+                </div>
+
+                @* Details *@
+                <div class="details">
+                    <h3 class="details-heading">ДЕТАЙЛИ:</h3>
+                    <p class="details-text">
+                        Отдава се под наем просторен @property.Title.ToLower() в предпочитания район @property.District, гр. Варна.
+                        Жилището се намира на @GetFloorLabel(property.Floor) етаж в поддържана сграда и предлага
+                        функционално разпределение и много естествена светлина. Състои се от уютна дневна,
+                        @(property.Rooms > 1 ? $"{property.Rooms - 1} комфортни спални" : "обособена спалня зона"),
+                        кухня, баня с тоалетна и тераса с приятна гледка към околността.
+                        Районът е изключително комуникативен – в близост до централни улици, магазини, училища и удобен градски транспорт.
+                        Имотът е подходящ както за семейство, така и за работещи хора, търсещи комфорт и удобство.
+                        @(property.Furnished ? "Апартаментът е напълно обзаведен с качествени мебели и уреди." : "Апартаментът се отдава необзаведен, давайки възможност за персонализация.")
+                    </p>
+                </div>
+
+                @* Broker Section *@
+                <h2 class="broker-section-title">Брокер</h2>
+                <div class="broker-card">
+                    <div class="broker-photo">
+                        <img src="images/broker.jpg" alt="Димитър Тодоров" />
+                    </div>
+                    <div class="broker-info">
+                        <h3 class="broker-name">Димитър Тодоров</h3>
+                        <p class="broker-subtitle">най-добър брокер за район @property.District</p>
+                        <div class="broker-actions">
+                            <button class="btn-broker-primary">Виж профил</button>
+                            <button class="btn-broker-outline">Свържи се с мен</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    @* Newsletter Section *@
+    <section class="newsletter-section">
+        <div class="section-container">
+            <div class="newsletter-card">
+                <div class="newsletter-card-content">
+                    <h2>Абонирай се</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur. Feugiat ut aliquet sit pellentesque sollicitudin. Egestas faucibus lacus diam in senectus consectetur. Mattis elit adipiscing quisque tellus scelerisque vehicula ante nunc.</p>
+                    <div class="newsletter-card-form">
+                        <input type="email" placeholder="Въведете имейл" />
+                        <button class="btn-submit-rounded">Изпрати</button>
+                    </div>
+                </div>
+                <div class="newsletter-card-image">
+                    <img src="images/newsletter-house.png" alt="Къща" />
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; } = "";
+
+    private Property? property;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("window.scrollTo", 0, 0);
+        }
+    }
+
+
+    protected override void OnInitialized()
+    {
+        if (int.TryParse(Id, out var id))
+        {
+            property = allProperties.FirstOrDefault(p => p.Id == id);
+        }
+    }
+
+    // ===== Property Model =====
+    public class Property
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = "";
+        public string Description { get; set; } = "";
+        public int Price { get; set; }
+        public int Area { get; set; }
+        public int Rooms { get; set; }
+        public string District { get; set; } = "";
+        public string Type { get; set; } = "";
+        public bool Furnished { get; set; }
+        public int Floor { get; set; }
+        public string Image { get; set; } = "";
+        public List<string> Features { get; set; } = new();
+        public string PriceUnit { get; set; } = "";
+    }
+
+    // ===== 12 Unique Properties =====
+    private List<Property> allProperties = new()
+    {
+        new Property
+        {
+            Id = 1,
+            Title = "Апартамент",
+            Description = "Отдава се апартамент под наем в район Приморски, гр.Варна",
+            Price = 550,
+            Area = 80,
+            Rooms = 3,
+            District = "Приморски",
+            Type = "3-стаен",
+            Furnished = true,
+            Floor = 3,
+            Image = "images/property-1.jpg",
+            Features = new() { "3 стаен", "Обзаведен", "80 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 2,
+            Title = "Студио",
+            Description = "Уютно студио в центъра на Варна, близо до Морската градина",
+            Price = 350,
+            Area = 45,
+            Rooms = 1,
+            District = "Център",
+            Type = "Студио",
+            Furnished = true,
+            Floor = 2,
+            Image = "images/property-2.jpg",
+            Features = new() { "Студио", "Обзаведен", "45 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 3,
+            Title = "Къща",
+            Description = "Просторна семейна къща в тих квартал с градина",
+            Price = 1200,
+            Area = 180,
+            Rooms = 5,
+            District = "Владиславово",
+            Type = "Къща",
+            Furnished = false,
+            Floor = 2,
+            Image = "images/property-3.jpg",
+            Features = new() { "5 стаен", "Необзаведен", "180 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 4,
+            Title = "Мезонет",
+            Description = "Луксозен мезонет с панорамна гледка към морето",
+            Price = 950,
+            Area = 140,
+            Rooms = 4,
+            District = "Приморски",
+            Type = "Мезонет",
+            Furnished = true,
+            Floor = 6,
+            Image = "images/property-1.jpg",
+            Features = new() { "4 стаен", "Обзаведен", "140 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 5,
+            Title = "Двустаен",
+            Description = "Приятен двустаен апартамент в квартал Левски",
+            Price = 400,
+            Area = 65,
+            Rooms = 2,
+            District = "Левски",
+            Type = "2-стаен",
+            Furnished = true,
+            Floor = 4,
+            Image = "images/property-2.jpg",
+            Features = new() { "2 стаен", "Обзаведен", "65 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 6,
+            Title = "Тристаен",
+            Description = "Нов тристаен апартамент в модерен комплекс в Одесос",
+            Price = 600,
+            Area = 95,
+            Rooms = 3,
+            District = "Одесос",
+            Type = "3-стаен",
+            Furnished = false,
+            Floor = 5,
+            Image = "images/property-3.jpg",
+            Features = new() { "3 стаен", "Необзаведен", "95 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 7,
+            Title = "Офис",
+            Description = "Офис площ в бизнес сграда в центъра на града",
+            Price = 800,
+            Area = 110,
+            Rooms = 3,
+            District = "Център",
+            Type = "Офис",
+            Furnished = true,
+            Floor = 3,
+            Image = "images/property-1.jpg",
+            Features = new() { "3 помещения", "Обзаведен", "110 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 8,
+            Title = "Ателие",
+            Description = "Творческо ателие в арт зона на града",
+            Price = 300,
+            Area = 55,
+            Rooms = 1,
+            District = "Чайка",
+            Type = "Ателие",
+            Furnished = false,
+            Floor = 1,
+            Image = "images/property-2.jpg",
+            Features = new() { "Отворен план", "Необзаведен", "55 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 9,
+            Title = "Пентхаус",
+            Description = "Роскошен пентхаус с тераса и барбекю зона",
+            Price = 1500,
+            Area = 160,
+            Rooms = 4,
+            District = "Приморски",
+            Type = "Пентхаус",
+            Furnished = true,
+            Floor = 8,
+            Image = "images/property-3.jpg",
+            Features = new() { "4 стаен", "Обзаведен", "160 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 10,
+            Title = "Двустаен",
+            Description = "Компактен двустаен в близост до университета",
+            Price = 380,
+            Area = 58,
+            Rooms = 2,
+            District = "Одесос",
+            Type = "2-стаен",
+            Furnished = true,
+            Floor = 2,
+            Image = "images/property-1.jpg",
+            Features = new() { "2 стаен", "Обзаведен", "58 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 11,
+            Title = "Тристаен",
+            Description = "Панорамен тристаен с изглед към Варненското езеро",
+            Price = 700,
+            Area = 105,
+            Rooms = 3,
+            District = "Аспарухово",
+            Type = "3-стаен",
+            Furnished = true,
+            Floor = 7,
+            Image = "images/property-2.jpg",
+            Features = new() { "3 стаен", "Обзаведен", "105 кв.м" },
+            PriceUnit = "/ месец"
+        },
+        new Property
+        {
+            Id = 12,
+            Title = "Къща",
+            Description = "Нова къща в затворен комплекс с охрана",
+            Price = 1800,
+            Area = 220,
+            Rooms = 6,
+            District = "Владиславово",
+            Type = "Къща",
+            Furnished = false,
+            Floor = 2,
+            Image = "images/property-3.jpg",
+            Features = new() { "6 стаен", "Необзаведен", "220 кв.м" },
+            PriceUnit = "/ месец"
+        }
+    };
+
+    private string GetRoomLabel(int rooms)
+    {
+        if (rooms == 1) return "стаен";
+        if (rooms == 2) return "стаен";
+        return "стаен";
+    }
+
+    private string GetFloorLabel(int floor)
+    {
+        if (floor == 1) return "1-ви";
+        if (floor == 2) return "2-ри";
+        if (floor == 3) return "3-ти";
+        if (floor == 4) return "4-ти";
+        if (floor == 5) return "5-ти";
+        if (floor == 6) return "6-ти";
+        if (floor == 7) return "7-ми";
+        if (floor == 8) return "8-ми";
+        return $"{floor}-ти";
+    }
+}
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+        --bg: #F9F0DE;
+        --text: #39383A;
+        --text-light: #7A787B;
+        --primary: #E65D36;
+        --secondary: #4C5F8A;
+        --white: #FFFFFF;
+        --border: #E5DDD0;
+        --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .about-page {
+        min-height: 100vh;
+        /* background: var(--bg); */
+        font-family: var(--font);
+    }
+
+    /* ===== Navbar ===== */
+    .search-navbar {
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .search-navbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 64px;
+    }
+
+    .search-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+
+    .search-logo-icon {
+        width: 42px;
+        height: 19px;
+        flex-shrink: 0;
+    }
+
+    .search-logo-text {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text);
+    }
+
+    .search-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .search-nav-links a {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .search-nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .nav-auth {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .btn-pill {
+        padding: 8px 20px;
+        border-radius: 24px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        font-family: var(--font);
+    }
+
+    .btn-pill-outline {
+        background: transparent;
+        color: var(--secondary);
+        border: 1.5px solid var(--secondary);
+    }
+
+    .btn-pill-outline:hover {
+        background: var(--secondary);
+        color: white;
+    }
+
+    .btn-pill-solid {
+        background: var(--secondary);
+        color: white;
+    }
+
+    .btn-pill-solid:hover {
+        background: #5a6f9a;
+        transform: scale(1.02);
+    }
+
+    .btn-primary {
+        padding: 14px 48px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+        box-shadow: 0 4px 16px rgba(230, 93, 54, 0.3);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-primary:hover {
+        background: #d4542f;
+        transform: scale(1.02);
+    }
+
+    /* ===== Section Container ===== */
+    .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    /* ===== About Content ===== */
+    .about-content {
+        padding: 32px 0 64px;
+    }
+
+    .about-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    .about-title {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--text);
+        letter-spacing: -1px;
+    }
+
+    .about-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .icon-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1.5px solid var(--border);
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        padding: 0;
+    }
+
+    .icon-btn:hover {
+        border-color: var(--secondary);
+        transform: scale(1.05);
+    }
+
+    .btn-rent-buy {
+        padding: 12px 24px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 24px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+        box-shadow: 0 4px 16px rgba(230, 93, 54, 0.3);
+    }
+
+    .btn-rent-buy:hover {
+        background: #d4542f;
+        transform: scale(1.02);
+    }
+
+    /* ===== Gallery ===== */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .gallery-item {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.03);
+    }
+
+    .gallery-last {
+        position: relative;
+    }
+
+    .gallery-next {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(57, 56, 58, 0.7);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        padding: 0;
+    }
+
+    .gallery-next:hover {
+        background: rgba(57, 56, 58, 0.9);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    /* ===== Stats Bar ===== */
+    .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .stat-card {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(57, 56, 58, 0.06);
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(57, 56, 58, 0.1);
+    }
+
+    .stat-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+        color: var(--text-light);
+    }
+
+    /* ===== Details ===== */
+    .details {
+        margin-bottom: 48px;
+    }
+
+    .details-heading {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+
+    .details-text {
+        font-size: 15px;
+        color: var(--text);
+        line-height: 1.8;
+        font-weight: 500;
+    }
+
+    /* ===== Broker Section ===== */
+    .broker-section-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--text);
+        text-align: center;
+        margin-bottom: 32px;
+        letter-spacing: -0.5px;
+    }
+
+    .broker-card {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        background: linear-gradient(135deg, #FDF8F0 0%, #F5EDE0 40%, #C8D0E0 100%);
+        border-radius: 24px;
+        padding: 40px 48px;
+        box-shadow: 0 8px 32px rgba(76, 95, 138, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        max-width: 900px;
+        margin: 0 auto 48px;
+    }
+
+    .broker-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        border: 4px solid var(--white);
+        box-shadow: 0 4px 16px rgba(57, 56, 58, 0.1);
+    }
+
+    .broker-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .broker-info {
+        flex: 1;
+    }
+
+    .broker-name {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+    }
+
+    .broker-subtitle {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 24px;
+    }
+
+    .broker-actions {
+        display: flex;
+        gap: 16px;
+    }
+
+    .btn-broker-primary {
+        padding: 12px 28px;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: 24px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+    }
+
+    .btn-broker-primary:hover {
+        background: #5a6f9a;
+        transform: scale(1.02);
+    }
+
+    .btn-broker-outline {
+        padding: 12px 28px;
+        background: transparent;
+        color: var(--text);
+        border: 1.5px solid var(--border);
+        border-radius: 24px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+    }
+
+    .btn-broker-outline:hover {
+        border-color: var(--secondary);
+        color: var(--secondary);
+    }
+
+    /* ===== Newsletter Section ===== */
+    .newsletter-section {
+        padding: 0 24px 64px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .newsletter-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+        border-radius: 24px;
+        padding: 48px;
+        background: linear-gradient(135deg, #FDF8F0 0%, #F5EDE0 40%, #C8D0E0 100%);
+        box-shadow: 0 8px 32px rgba(76, 95, 138, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        overflow: hidden;
+    }
+
+    .newsletter-card-content {
+        flex: 1;
+        max-width: 460px;
+    }
+
+    .newsletter-card-content h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
+    }
+
+    .newsletter-card-content p {
+        font-size: 14px;
+        color: var(--text-light);
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .newsletter-card-form {
+        display: flex;
+        gap: 12px;
+    }
+
+    .newsletter-card-form input {
+        flex: 1;
+        height: 48px;
+        padding: 0 16px;
+        font-size: 14px;
+        background: var(--white);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        outline: none;
+        color: var(--text);
+        transition: all 0.2s;
+        font-family: var(--font);
+    }
+
+    .newsletter-card-form input::placeholder {
+        color: #B5B0A8;
+    }
+
+    .newsletter-card-form input:focus {
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 3px rgba(76, 95, 138, 0.1);
+    }
+
+    .btn-submit-rounded {
+        padding: 0 24px;
+        height: 48px;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+        white-space: nowrap;
+    }
+
+    .btn-submit-rounded:hover {
+        background: #5a6f9a;
+        transform: scale(1.02);
+    }
+
+    .newsletter-card-image {
+        flex-shrink: 0;
+        width: 380px;
+    }
+
+    .newsletter-card-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* ===== Responsive ===== */
+    @@media (max-width: 992px) {
+        .gallery {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .stats-bar {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .broker-card {
+            flex-direction: column;
+            text-align: center;
+            gap: 24px;
+        }
+
+        .broker-actions {
+            justify-content: center;
+        }
+
+        .about-header {
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .newsletter-card {
+            flex-direction: column;
+            text-align: center;
+            gap: 32px;
+        }
+
+        .newsletter-card-content {
+            max-width: 100%;
+        }
+
+        .newsletter-card-form {
+            justify-content: center;
+        }
+
+        .newsletter-card-image {
+            width: 300px;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .search-navbar-inner {
+            padding: 0 16px;
+        }
+
+        .search-nav-links {
+            display: none;
+        }
+
+        .nav-auth {
+            display: none;
+        }
+
+        .about-title {
+            font-size: 32px;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .stats-bar {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .broker-card {
+            padding: 32px 24px;
+        }
+
+        .broker-photo {
+            width: 140px;
+            height: 140px;
+        }
+
+        .broker-actions {
+            flex-direction: column;
+        }
+
+        .btn-broker-primary,
+        .btn-broker-outline {
+            width: 100%;
+        }
+
+        .newsletter-card {
+            padding: 32px 24px;
+            margin: 0;
+        }
+
+        .newsletter-card-form {
+            flex-direction: column;
+        }
+
+        .newsletter-card-form input,
+        .btn-submit-rounded {
+            width: 100%;
+        }
+
+        .newsletter-card-image {
+            width: 100%;
+            max-width: 280px;
+        }
+    }
+</style>

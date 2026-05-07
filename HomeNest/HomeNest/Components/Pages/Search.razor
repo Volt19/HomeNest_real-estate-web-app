@@ -1,0 +1,738 @@
+@page "/3"
+
+<PageTitle>HomeNest - Real Estate</PageTitle>
+
+<div class="search-page">
+    <nav class="navbar">
+        <div class="nav-bg"></div>
+        <div class="nav-menu-bg"></div>
+        <div class="logo-section">
+            <svg class="logo-icon" viewBox="0 0 42 19" fill="none">
+                <path d="M38.37 0C38.42 0.02 38.47 0.05 38.53 0.07C38.07 0.46 37.61 0.84 37.12 1.19C36.96 1.3 36.81 1.41 36.65 1.52C34.99 2.77 33.18 3.86 31.28 4.79C31.09 4.88 30.9 4.98 30.71 5.08C29.61 5.62 28.48 6.07 27.34 6.51C27.22 6.55 27.1 6.6 26.98 6.66C27.04 6.66 27.1 6.67 27.17 6.67C27.46 6.69 27.75 6.7 28.04 6.72C28.14 6.73 28.24 6.73 28.34 6.74C28.91 6.78 29.46 6.83 30.02 6.92C30.4 6.97 30.79 7.01 31.17 7.06C33.66 7.34 36.19 7.69 38.6 8.35C38.98 8.45 39.36 8.53 39.74 8.61C40.51 8.78 41.25 9.01 42 9.25V9.32C41.23 9.28 40.48 9.16 39.73 9.04C37.19 8.66 34.63 8.36 32.07 8.21C32 8.21 31.93 8.2 31.86 8.2C31.25 8.16 30.65 8.15 30.05 8.14C29.98 8.13 29.91 8.13 29.84 8.13C27.13 8.09 27.13 8.09 24.43 8.27C24.37 8.28 24.32 8.28 24.26 8.29C23.26 8.4 22.49 8.66 21.6 9.08C21.52 9.11 21.44 9.15 21.35 9.19C21.15 9.28 20.96 9.38 20.76 9.47C20.89 9.44 21.02 9.42 21.16 9.39C21.13 9.43 21.1 9.47 21.06 9.51C21.02 9.56 20.98 9.61 20.93 9.67C20.89 9.72 20.85 9.77 20.81 9.82C20.49 10.22 20.37 10.49 20.39 10.99C20.63 12.3 21.79 13.21 22.91 13.95C26.2 16.08 30.14 17.65 34 18.67C34.14 18.7 34.27 18.75 34.41 18.79C34.43 18.84 34.46 18.89 34.49 18.94C34.38 18.94 34.27 18.94 34.16 18.94C34.1 18.94 34.04 18.94 33.98 18.94C33.76 18.94 33.76 18.94 33.51 18.9C33.27 18.87 33.04 18.85 32.8 18.84C31.54 18.77 30.28 18.64 29.02 18.5C28.94 18.49 28.86 18.48 28.77 18.48C27.18 18.3 25.59 18.09 24.03 17.77" fill="#0A0B0D" />
+                <path d="M9.02 8.88C9.56 9.08 10.1 9.26 10.64 9.44C10.79 9.49 10.94 9.53 11.09 9.58C12.16 9.92 13.19 10.1 14.33 10.09C14.5 10.09 14.67 10.09 14.84 10.09C16.25 10.09 17.56 9.73 18.89 9.33C21.59 8.53 21.59 8.53 22.62 8.51C22.43 8.69 22.25 8.8 22 8.9C21.93 8.94 21.86 8.97 21.79 9C21.64 9.07 21.49 9.13 21.34 9.2C21.27 9.23 21.2 9.26 21.13 9.29C21.06 9.32 21 9.35 20.93 9.38C20.76 9.46 20.76 9.46 20.64 9.58C18.77 11.28 13.9 11.87 11.44 11.86C10.44 11.86 9.52 11.76 8.56 11.47C8.49 11.45 8.43 11.43 8.36 11.4C6.85 10.94 4.79 10.06 3.88 8.8V8.66C3.88 8.66 3.96 8.51 3.96 8.51C5.36 7.53 7.57 8.35 9.02 8.88Z" fill="#EA6028" />
+            </svg>
+            <span class="logo-text">HomeNest</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Търси</a>
+            <a href="#">За нас</a>
+            <a href="#">Екип</a>
+            <a href="#">Контакт</a>
+            <a href="#">Listings</a>
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-signin">Sign in</button>
+            <button class="btn-login">Log in</button>
+        </div>
+    </nav>
+
+
+    <section class="filter-section">
+        <div class="section-container">
+            <h1 class="filter-title">Филтрирай бързо и лесно</h1>
+            <div class="filter-card">
+                <div class="filter-grid">
+                    <div class="filter-col">
+                        <div class="filter-group">
+                            <label class="filter-label">Цена</label>
+                            <div class="filter-inputs">
+                                <input type="text" placeholder="от" class="filter-input" />
+                                <input type="text" placeholder="до" class="filter-input" />
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Площ</label>
+                            <div class="filter-inputs">
+                                <input type="text" placeholder="от" class="filter-input" />
+                                <input type="text" placeholder="до" class="filter-input" />
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Етаж</label>
+                            <div class="filter-inputs">
+                                <input type="text" placeholder="от" class="filter-input" />
+                                <input type="text" placeholder="до" class="filter-input" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-col">
+                        <div class="filter-group">
+                            <label class="filter-label">Район</label>
+                            <div class="filter-select">Levski</div>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Вид на имота</label>
+                            <div class="filter-select">double room</div>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Сортиране</label>
+                            <div class="filter-select placeholder">
+                                <span>избери</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-cta">
+                    <button class="btn-primary">Потърси сега!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="properties-section">
+        <div class="section-container">
+            <h2 class="properties-title">Имоти</h2>
+            <div class="properties-grid">
+                @for (int i = 0; i < 9; i++)
+                {
+                    <div class="property-card">
+                        <div class="property-image-wrap">
+                            <img src="images/property-@(i % 3 + 1).jpg" alt="Апартамент" loading="lazy" />
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">Апартамент</h3>
+                            <p class="property-desc">Отдава се апартамент под наем в район Приморски, гр.Варна</p>
+                            <div class="property-features">
+                                <div class="property-feature">
+                                    <div class="feature-check">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
+                                    <span>3 стаен</span>
+                                </div>
+                                <div class="property-feature">
+                                    <div class="feature-check">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
+                                    <span>Обзаведен</span>
+                                </div>
+                                <div class="property-feature">
+                                    <div class="feature-check">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
+                                    <span>80 кв.м</span>
+                                </div>
+                            </div>
+                            <div class="property-footer">
+                                <button class="btn-secondary-sm">Виж повече</button>
+                                <div class="property-price">
+                                    <span class="price-value">€550</span>
+                                    <span class="price-unit">/ месец</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="section-container">
+            <div class="newsletter-card">
+                <div class="newsletter-content">
+                    <h2>Абонирай се</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur. Feugiat ut aliquet sit pellentesque sollicitudin. Egestas faucibus lacus diam in senectus consectetur. Mattis elit adipiscing quisque tellus scelerisque vehicula ante nunc.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Въведете имейл" />
+                        <button class="btn-submit">Изпрати</button>
+                    </div>
+                </div>
+                <div class="newsletter-image">
+                    <img src="images/newsletter-house.png" alt="Къща" />
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>    @@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+        --bg: #F9F0DE;
+        --text: #39383A;
+        --text-light: #7A787B;
+        --primary: #E65D36;
+        --secondary: #4C5F8A;
+        --white: #FFFFFF;
+        --border: #E5DDD0;
+        --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .search-page {
+        min-height: 100vh;
+        background: var(--bg);
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 64px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 19px;
+        flex-shrink: 0;
+    }
+
+    .logo-text {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+            .nav-links a:hover {
+                color: var(--primary);
+            }
+
+    .nav-auth {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .btn-pill {
+        padding: 8px 20px;
+        border-radius: 24px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        font-family: var(--font);
+    }
+
+    .btn-pill-outline {
+        background: transparent;
+        color: var(--secondary);
+        border: 1.5px solid var(--secondary);
+    }
+
+        .btn-pill-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+    .btn-pill-solid {
+        background: var(--secondary);
+        color: white;
+    }
+
+        .btn-pill-solid:hover {
+            background: #5a6f9a;
+            transform: scale(1.02);
+        }
+
+    /* ===== Section Container ===== */
+    .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    /* ===== Filter Section ===== */
+    .filter-section {
+        padding: 32px 0 48px;
+    }
+
+    .filter-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 32px;
+        letter-spacing: -0.5px;
+    }
+
+    .filter-card {
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 20px;
+        padding: 40px;
+        background: linear-gradient(135deg, #FDF8F0 0%, #F5EDE0 40%, #C8D0E0 100%);
+        box-shadow: 0 8px 32px rgba(76, 95, 138, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .filter-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 48px;
+    }
+
+    .filter-col {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filter-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .filter-inputs {
+        display: flex;
+        gap: 12px;
+    }
+
+    .filter-input {
+        flex: 1;
+        height: 42px;
+        padding: 0 14px;
+        font-size: 14px;
+        background: var(--white);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        outline: none;
+        color: var(--text);
+        transition: all 0.2s;
+        font-family: var(--font);
+    }
+
+        .filter-input::placeholder {
+            color: #B5B0A8;
+        }
+
+        .filter-input:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(76, 95, 138, 0.1);
+        }
+
+    .filter-select {
+        width: 100%;
+        height: 42px;
+        padding: 0 14px;
+        font-size: 14px;
+        background: var(--white);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+    }
+
+        .filter-select.placeholder {
+            justify-content: space-between;
+            color: #B5B0A8;
+        }
+
+        .filter-select svg {
+            color: #B5B0A8;
+            flex-shrink: 0;
+        }
+
+    .filter-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+    }
+
+    .btn-primary {
+        padding: 14px 48px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+        box-shadow: 0 4px 16px rgba(230, 93, 54, 0.3);
+    }
+
+        .btn-primary:hover {
+            background: #d4542f;
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(230, 93, 54, 0.4);
+        }
+
+    /* ===== Properties Section ===== */
+    .properties-section {
+        padding: 24px 0 64px;
+    }
+
+    .properties-title {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 32px;
+        letter-spacing: -1px;
+    }
+
+    .properties-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    /* ===== Property Card ===== */
+    .property-card {
+        background: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(57, 56, 58, 0.06);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+        .property-card:hover {
+            box-shadow: 0 12px 32px rgba(57, 56, 58, 0.12);
+            transform: translateY(-4px);
+        }
+
+    .property-image-wrap {
+        aspect-ratio: 4/3;
+        overflow: hidden;
+    }
+
+        .property-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+    .property-card:hover .property-image-wrap img {
+        transform: scale(1.05);
+    }
+
+    .property-content {
+        padding: 20px;
+    }
+
+    .property-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 8px;
+    }
+
+    .property-desc {
+        font-size: 13px;
+        color: var(--text-light);
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .property-features {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .property-feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .feature-check {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+        .feature-check svg {
+            width: 12px;
+            height: 12px;
+        }
+
+    .property-feature span {
+        font-size: 13px;
+        color: var(--text);
+        font-weight: 500;
+    }
+
+    .property-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .btn-secondary-sm {
+        padding: 8px 18px;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+    }
+
+        .btn-secondary-sm:hover {
+            background: #5a6f9a;
+            transform: scale(1.02);
+        }
+
+    .property-price {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+    }
+
+    .price-value {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text);
+    }
+
+    .price-unit {
+        font-size: 12px;
+        color: var(--text-light);
+    }
+
+    /* ===== Newsletter Section ===== */
+    .newsletter-section {
+        padding: 0 24px 64px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .newsletter-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+        border-radius: 24px;
+        padding: 48px;
+        background: linear-gradient(135deg, #FDF8F0 0%, #F5EDE0 40%, #C8D0E0 100%);
+        box-shadow: 0 8px 32px rgba(76, 95, 138, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        overflow: hidden;
+    }
+
+    .newsletter-content {
+        flex: 1;
+        max-width: 460px;
+    }
+
+        .newsletter-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .newsletter-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+    .newsletter-form {
+        display: flex;
+        gap: 12px;
+    }
+
+        .newsletter-form input {
+            flex: 1;
+            height: 48px;
+            padding: 0 16px;
+            font-size: 14px;
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            color: var(--text);
+            transition: all 0.2s;
+            font-family: var(--font);
+        }
+
+            .newsletter-form input::placeholder {
+                color: #B5B0A8;
+            }
+
+            .newsletter-form input:focus {
+                border-color: var(--secondary);
+                box-shadow: 0 0 0 3px rgba(76, 95, 138, 0.1);
+            }
+
+    .btn-submit {
+        padding: 0 24px;
+        height: 48px;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: var(--font);
+        white-space: nowrap;
+    }
+
+        .btn-submit:hover {
+            background: #5a6f9a;
+            transform: scale(1.02);
+        }
+
+    .newsletter-image {
+        flex-shrink: 0;
+        width: 380px;
+    }
+
+        .newsletter-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+    /* ===== Responsive ===== */
+    @@media (max-width: 992px) {
+        .properties-grid
+
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-grid {
+        gap: 24px 24px;
+    }
+
+    .newsletter-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .newsletter-content {
+        max-width: 100%;
+    }
+
+    .newsletter-form {
+        justify-content: center;
+    }
+
+    .newsletter-image {
+        width: 300px;
+    }
+
+    }
+
+    @@media (max-width: 768px) {
+        .navbar-inner
+
+    {
+        padding: 0 16px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-auth {
+        display: none;
+    }
+
+    .filter-card {
+        padding: 24px;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .properties-title {
+        font-size: 32px;
+    }
+
+    .newsletter-card {
+        padding: 32px 24px;
+        margin: 0;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+        .newsletter-form input,
+        .btn-submit {
+            width: 100%;
+        }
+
+    .newsletter-image {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .property-footer {
+        flex-wrap: wrap;
+    }
+
+    }</style>

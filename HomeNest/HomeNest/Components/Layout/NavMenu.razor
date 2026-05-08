@@ -1,3 +1,6 @@
+@rendermode InteractiveServer
+@implements IDisposable
+
 <div style="background-color: #FFFFFF;">
 <header class="homenest-header">
     <div class="header-container">
@@ -47,7 +50,7 @@
                     </button>
                     @if (_userMenuOpen)
                     {
-                        <div class="user-dropdown">
+                            <div class="user-dropdown" @onclick:stopPropagation="true">
                             <div class="user-dropdown-header">
                                 <div class="user-avatar-lg">
                                     <span>@GetInitials(UserState.UserName)</span>
@@ -109,11 +112,13 @@
 </div>
 
 @code {
+
     private bool _mobileMenuOpen = false;
     private bool _userMenuOpen = false;
 
     [Inject] private UserStateService UserState { get; set; } = default!;
     [Inject] private NavigationManager Navigation { get; set; } = default!;
+    [Inject] private IJSRuntime JS { get; set; } = default!;
 
     protected override void OnInitialized()
     {
@@ -135,17 +140,37 @@
         _mobileMenuOpen = !_mobileMenuOpen;
     }
 
-    private void ToggleUserMenu()
+
+
+    private async Task ToggleUserMenu()
     {
         _userMenuOpen = !_userMenuOpen;
+
+        if (_userMenuOpen)
+        {
+            // Small delay so the toggle click itself doesn't immediately close it
+            await Task.Delay(800);
+            await JS.InvokeVoidAsync("eval", @"
+            setTimeout(() => {
+                const closeMenu = (e) => {
+                    if (!e.target.closest('.user-menu')) {
+                        document.querySelector('.user-menu-toggle').dispatchEvent(new Event('click', { bubbles: true }));
+                        document.removeEventListener('click', closeMenu);
+                    }
+                };
+                document.addEventListener('click', closeMenu);
+            }, 0);
+        ");
+        }
     }
 
-    private void Logout()
+    private async Task Logout()
     {
+        await JS.InvokeVoidAsync("homenestAuth.logout");
         UserState.Logout();
         _userMenuOpen = false;
         _mobileMenuOpen = false;
-        Navigation.NavigateTo("/");
+        Navigation.NavigateTo("/", forceLoad: true);
     }
 
     private string GetInitials(string name)

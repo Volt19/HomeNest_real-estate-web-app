@@ -2,6 +2,7 @@
 @rendermode InteractiveServer
 @inject NavigationManager Navigation
 @inject UserStateService UserState
+@inject IJSRuntime JS
 
 <PageTitle>HomeNest - Вход</PageTitle>
 
@@ -68,17 +69,26 @@
         }
 
         _loading = true;
-        var success = await UserState.LoginAsync(_email, _password);
-        _loading = false;
-
-        if (success)
+        try
         {
-            var destination = string.IsNullOrWhiteSpace(ReturnUrl) ? "/" : ReturnUrl;
-            Navigation.NavigateTo(destination);
+            var success = await JS.InvokeAsync<bool>("homenestAuth.login", _email, _password);
+            if (success)
+            {
+                var destination = string.IsNullOrWhiteSpace(ReturnUrl) ? "/" : ReturnUrl;
+                Navigation.NavigateTo(destination, forceLoad: true);
+            }
+            else
+            {
+                _error = "Невалиден имейл или парола.";
+            }
         }
-        else
+        catch
         {
-            _error = "Невалиден имейл или парола.";
+            _error = "Възникна грешка при влизане.";
+        }
+        finally
+        {
+            _loading = false;
         }
     }
 

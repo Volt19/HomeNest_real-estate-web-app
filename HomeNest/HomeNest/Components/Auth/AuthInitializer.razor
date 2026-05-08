@@ -1,0 +1,50 @@
+@rendermode InteractiveServer
+@implements IDisposable
+@inject IHttpContextAccessor HttpContextAccessor
+@inject PersistentComponentState ApplicationState
+@inject UserStateService UserState
+
+@code {
+    private const string AuthStateKey = "homenest_auth";
+    private PersistingComponentStateSubscription _stateSubscription;
+
+    protected override void OnInitialized()
+    {
+        _stateSubscription = ApplicationState.RegisterOnPersisting(PersistAuthState);
+
+        // If we're prerendering, read the auth cookie directly from HttpContext
+        var httpContext = HttpContextAccessor.HttpContext;
+        if (httpContext?.User?.Identity?.IsAuthenticated == true && !UserState.IsLoggedIn)
+        {
+            UserState.RestoreFromClaims(httpContext.User);
+        }
+
+        // If we're in the interactive circuit, restore from the persisted state
+        if (ApplicationState.TryTakeFromJson<UserSessionDto>(AuthStateKey, out var session) && session is not null)
+        {
+            UserState.RestoreFromSession(session);
+        }
+    }
+
+    private Task PersistAuthState()
+    {
+        if (UserState.IsLoggedIn)
+        {
+            var session = new UserSessionDto
+            {
+                UserId = UserState.UserId,
+                UserName = UserState.UserName,
+                Email = UserState.Email,
+                Phone = UserState.Phone,
+                IsAdmin = UserState.IsAdmin
+            };
+            ApplicationState.PersistAsJson(AuthStateKey, session);
+        }
+        return Task.CompletedTask;
+    }
+
+    public void Dispose()
+    {
+        _stateSubscription.Dispose();
+    }
+}

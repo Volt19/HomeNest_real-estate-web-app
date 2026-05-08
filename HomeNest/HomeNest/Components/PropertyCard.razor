@@ -1,0 +1,69 @@
+<div class="property-card-search">
+    <div class="property-image-wrap">
+        <img src="@Property.Image" alt="@Property.Title" loading="lazy" />
+        <div class="property-badge">@Property.Type</div>
+        @if (ShowFavoriteButton)
+        {
+            <button class="favorite-btn @(IsFavorite ? "active" : "")" @onclick="HandleFavoriteClick" aria-label="@FavoriteAriaLabel">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                </svg>
+            </button>
+        }
+    </div>
+    <div class="property-content">
+        <h3 class="property-title">@Property.Title</h3>
+        <p class="property-desc">@Property.Description</p>
+        <div class="property-meta">
+            <span class="meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5" /></svg>
+                @Property.Area кв.м
+            </span>
+            <span class="meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 20h10M6 4h12a1 1 0 011 1v14a1 1 0 01-1 1H6a1 1 0 01-1-1V5a1 1 0 011-1z" /></svg>
+                Етаж @Property.Floor
+            </span>
+            @if (ShowRooms)
+            {
+                <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v18M19 3v18M5 12h14" /></svg>
+                    @Property.Rooms @(Property.Rooms == 1 ? "стая" : "стаи")
+                </span>
+            }
+        </div>
+        <div class="property-footer">
+            <a href="/property/@Property.Id" class="btn-secondary-sm">Виж повече</a>
+            <div class="property-price">
+                <span class="price-value">€@Property.Price</span>
+                <span class="price-unit">@Property.PriceUnit</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public Property Property { get; set; } = default!;
+
+    [Parameter]
+    public bool ShowFavoriteButton { get; set; }
+
+    [Parameter]
+    public bool IsFavorite { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnFavoriteToggle { get; set; }
+
+    [Parameter]
+    public bool ShowRooms { get; set; } = true;
+
+    private string FavoriteAriaLabel => IsFavorite ? "Премахни от любими" : "Добави в любими";
+
+    private async Task HandleFavoriteClick()
+    {
+        if (OnFavoriteToggle.HasDelegate)
+        {
+            await OnFavoriteToggle.InvokeAsync(Property.Id);
+        }
+    }
+}

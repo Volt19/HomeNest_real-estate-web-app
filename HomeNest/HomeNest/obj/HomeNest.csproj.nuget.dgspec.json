@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Veli_\\source\\repos\\HomeNest_Z1\\HomeNest\\HomeNest.csproj": {}
+    "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\HomeNest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Veli_\\source\\repos\\HomeNest_Z1\\HomeNest\\HomeNest.csproj": {
+    "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\HomeNest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Veli_\\source\\repos\\HomeNest_Z1\\HomeNest\\HomeNest.csproj",
+        "projectUniqueName": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\HomeNest.csproj",
         "projectName": "HomeNest",
-        "projectPath": "C:\\Users\\Veli_\\source\\repos\\HomeNest_Z1\\HomeNest\\HomeNest.csproj",
+        "projectPath": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\HomeNest.csproj",
         "packagesPath": "C:\\Users\\Veli_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Veli_\\source\\repos\\HomeNest_Z1\\HomeNest\\obj\\",
+        "outputPath": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -52,17 +52,39 @@
           "dependencies": {
             "BCrypt.Net-Next": {
               "target": "Package",
-              "version": "[4.0.3, )"
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[9.0.12, )"
             }
           },
           "imports": [

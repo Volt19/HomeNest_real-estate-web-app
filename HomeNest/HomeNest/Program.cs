@@ -1,8 +1,12 @@
+using System.Security.Claims;
 using HomeNest.Components;
 using HomeNest.Data;
 using HomeNest.Data.Models;
 using HomeNest.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using BCrypt.Net;
 
 namespace HomeNest
 {
@@ -15,6 +19,20 @@ namespace HomeNest
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+
+            // Authentication & Authorization
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.Cookie.Name = "homenest_session";
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.SameSite = SameSiteMode.Strict;
+                    options.ExpireTimeSpan = TimeSpan.FromDays(7);
+                    options.SlidingExpiration = true;
+                    options.LoginPath = "/login";
+                });
+            builder.Services.AddAuthorization();
+            builder.Services.AddHttpContextAccessor();
 
             // Database - use factory for Blazor Server thread safety
             builder.Services.AddDbContextFactory<HomeNestDbContext>(options =>
@@ -45,8 +63,52 @@ namespace HomeNest
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseAntiforgery();
             app.MapStaticAssets();
+
+            // Auth API endpoints
+            app.MapPost("/api/auth/login", async (LoginRequest request, HomeNestDbContext db, HttpContext ctx) =>
+            {
+                var user = await db.Users.AsNoTracking()
+                    .FirstOrDefaultAsync(u => u.Email == request.Email);
+
+                if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+                {
+                    return Results.Unauthorized();
+                }
+
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                    new Claim(ClaimTypes.Name, user.Name),
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim("Phone", user.Phone ?? ""),
+                    new Claim("IsAdmin", user.IsAdmin.ToString())
+                };
+
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+
+                await ctx.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    principal,
+                    new AuthenticationProperties
+                    {
+                        IsPersistent = true,
+                        ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7)
+                    });
+
+                return Results.Ok(new { success = true });
+            });
+
+            app.MapPost("/api/auth/logout", async (HttpContext ctx) =>
+            {
+                await ctx.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                return Results.Ok(new { success = true });
+            });
+
             app.MapRazorComponents<App>()
                 .AddInteractiveServerRenderMode();
 
@@ -70,4 +132,6 @@ namespace HomeNest
             }
         }
     }
+
+    public record LoginRequest(string Email, string Password);
 }

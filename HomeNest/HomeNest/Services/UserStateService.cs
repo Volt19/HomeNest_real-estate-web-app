@@ -22,6 +22,32 @@ public class UserStateService
         _factory = factory;
     }
 
+    public void RestoreFromSession(UserSessionDto session)
+    {
+        IsLoggedIn = true;
+        UserId = session.UserId;
+        UserName = session.UserName;
+        Email = session.Email;
+        Phone = session.Phone;
+        IsAdmin = session.IsAdmin;
+        NotifyStateChanged();
+    }
+
+    public void RestoreFromClaims(System.Security.Claims.ClaimsPrincipal user)
+    {
+        var userIdClaim = user.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+        if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out var userId))
+            return;
+
+        IsLoggedIn = true;
+        UserId = userId;
+        UserName = user.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value ?? "";
+        Email = user.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value ?? "";
+        Phone = user.FindFirst("Phone")?.Value ?? "";
+        IsAdmin = bool.TryParse(user.FindFirst("IsAdmin")?.Value, out var isAdmin) && isAdmin;
+        NotifyStateChanged();
+    }
+
     public async Task<bool> RegisterAsync(string name, string email, string phone, string password)
     {
         await using var db = await _factory.CreateDbContextAsync();
@@ -40,7 +66,6 @@ public class UserStateService
         db.Users.Add(user);
         await db.SaveChangesAsync();
 
-        await LoginAsync(email, password);
         return true;
     }
 

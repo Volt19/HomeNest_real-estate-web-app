@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SkBa2BG1p0U=",
+  "dgSpecHash": "paqbdR/Nwck=",
   "success": true,
-  "projectFilePath": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\HomeNest.csproj",
+  "projectFilePath": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\HomeNest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Veli_\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\Veli_\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

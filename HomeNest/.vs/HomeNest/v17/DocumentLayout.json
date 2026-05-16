@@ -1,73 +1,73 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\",
+  "WorkspaceRootPath": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\homenest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\homenest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\homenest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\data\\homenestdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\data\\homenestdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\data\\homenestdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\migrations\\homenestdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\migrations\\homenestdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\migrations\\homenestdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\data\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\data\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\data\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\migrations\\20260505094335_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\migrations\\20260505094335_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\migrations\\20260505094335_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\services\\propertyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\services\\propertyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\services\\propertyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\services\\userstateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\services\\userstateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\services\\userstateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\data\\homenestdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\data\\homenestdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\data\\homenestdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\wwwroot\\images\\swallow.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\wwwroot\\images\\swallow.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\wwwroot\\images\\swallow.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest\\homenest\\homenest\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|d:\\veli_d\\desktop\\homenest_real-estate-web-app\\homenest\\homenest\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35CE4A52-CC40-4F96-A69B-3F00FD2A605D}|HomeNest\\HomeNest.csproj|solutionrelative:homenest\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -84,48 +84,45 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "HomeNestDbContextModelSnapshot.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Migrations\\HomeNestDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Migrations\\HomeNestDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "HomeNest\\Migrations\\HomeNestDbContextModelSnapshot.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Migrations\\HomeNestDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Migrations\\HomeNestDbContextModelSnapshot.cs",
               "RelativeToolTip": "HomeNest\\Migrations\\HomeNestDbContextModelSnapshot.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T12:47:40.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T12:47:40.988Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "HomeNestDbContext.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Data\\HomeNestDbContext.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Data\\HomeNestDbContext.cs",
               "RelativeDocumentMoniker": "HomeNest\\Data\\HomeNestDbContext.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Data\\HomeNestDbContext.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Data\\HomeNestDbContext.cs",
               "RelativeToolTip": "HomeNest\\Data\\HomeNestDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T11:34:44.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T11:34:44.696Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "NavMenu.razor",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\Layout\\NavMenu.razor",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "HomeNest\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "HomeNest\\Components\\Layout\\NavMenu.razor",
               "ViewState": "AgIAAIoAAAAAAAAAAAAAAJcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T10:16:41.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T10:16:41.242Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "HomeNest.csproj",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\HomeNest.csproj",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\HomeNest.csproj",
               "RelativeDocumentMoniker": "HomeNest\\HomeNest.csproj",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\HomeNest.csproj",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\HomeNest.csproj",
               "RelativeToolTip": "HomeNest\\HomeNest.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -136,48 +133,45 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Property.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Data\\Models\\Property.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Data\\Models\\Property.cs",
               "RelativeDocumentMoniker": "HomeNest\\Data\\Models\\Property.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Data\\Models\\Property.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Data\\Models\\Property.cs",
               "RelativeToolTip": "HomeNest\\Data\\Models\\Property.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T12:47:53.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T12:47:53.4Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "PropertyService.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Services\\PropertyService.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Services\\PropertyService.cs",
               "RelativeDocumentMoniker": "HomeNest\\Services\\PropertyService.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Services\\PropertyService.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Services\\PropertyService.cs",
               "RelativeToolTip": "HomeNest\\Services\\PropertyService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T12:47:32.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T12:47:32.892Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "20260505094335_InitialCreate.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Migrations\\20260505094335_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Migrations\\20260505094335_InitialCreate.cs",
               "RelativeDocumentMoniker": "HomeNest\\Migrations\\20260505094335_InitialCreate.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Migrations\\20260505094335_InitialCreate.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Migrations\\20260505094335_InitialCreate.cs",
               "RelativeToolTip": "HomeNest\\Migrations\\20260505094335_InitialCreate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T11:47:44.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T11:47:44.811Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "HomeNestDbContextFactory.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Data\\HomeNestDbContextFactory.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Data\\HomeNestDbContextFactory.cs",
               "RelativeDocumentMoniker": "HomeNest\\Data\\HomeNestDbContextFactory.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Data\\HomeNestDbContextFactory.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Data\\HomeNestDbContextFactory.cs",
               "RelativeToolTip": "HomeNest\\Data\\HomeNestDbContextFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -187,22 +181,21 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "UserStateService.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Services\\UserStateService.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Services\\UserStateService.cs",
               "RelativeDocumentMoniker": "HomeNest\\Services\\UserStateService.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Services\\UserStateService.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Services\\UserStateService.cs",
               "RelativeToolTip": "HomeNest\\Services\\UserStateService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAIwD0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T11:52:49.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T11:52:49.485Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Program.cs",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Program.cs",
               "RelativeDocumentMoniker": "HomeNest\\Program.cs",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Program.cs",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Program.cs",
               "RelativeToolTip": "HomeNest\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -212,9 +205,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "swallow.png",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\wwwroot\\images\\swallow.png",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\wwwroot\\images\\swallow.png",
               "RelativeDocumentMoniker": "HomeNest\\wwwroot\\images\\swallow.png",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\wwwroot\\images\\swallow.png",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\wwwroot\\images\\swallow.png",
               "RelativeToolTip": "HomeNest\\wwwroot\\images\\swallow.png",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
               "WhenOpened": "2026-04-29T18:12:47.117Z"
@@ -223,9 +216,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "app.css",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\wwwroot\\app.css",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\wwwroot\\app.css",
               "RelativeDocumentMoniker": "HomeNest\\wwwroot\\app.css",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\wwwroot\\app.css",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\wwwroot\\app.css",
               "RelativeToolTip": "HomeNest\\wwwroot\\app.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAMsNAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -235,9 +228,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "_Imports.razor",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\_Imports.razor",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\_Imports.razor",
               "RelativeDocumentMoniker": "HomeNest\\Components\\_Imports.razor",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\_Imports.razor",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\_Imports.razor",
               "RelativeToolTip": "HomeNest\\Components\\_Imports.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -247,9 +240,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\Layout\\MainLayout.razor",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "HomeNest\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\Layout\\MainLayout.razor",
               "RelativeToolTip": "HomeNest\\Components\\Layout\\MainLayout.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -259,9 +252,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "Routes.razor",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\Routes.razor",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "HomeNest\\Components\\Routes.razor",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\Routes.razor",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\Routes.razor",
               "RelativeToolTip": "HomeNest\\Components\\Routes.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -271,9 +264,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "App.razor",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\App.razor",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\App.razor",
               "RelativeDocumentMoniker": "HomeNest\\Components\\App.razor",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\Components\\App.razor",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\Components\\App.razor",
               "RelativeToolTip": "HomeNest\\Components\\App.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -283,9 +276,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "index.html",
-              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\wwwroot\\index.html",
+              "DocumentMoniker": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "HomeNest\\wwwroot\\index.html",
-              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest\\HomeNest\\HomeNest\\wwwroot\\index.html",
+              "ToolTip": "D:\\Veli_D\\Desktop\\HomeNest_real-estate-web-app\\HomeNest\\HomeNest\\wwwroot\\index.html",
               "RelativeToolTip": "HomeNest\\wwwroot\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",

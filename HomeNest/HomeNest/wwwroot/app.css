@@ -3529,3 +3529,667 @@ main {
         flex-direction: column;
     }
 }
+
+/* ============================================
+   ABOUT PAGE RESPONSIVE
+   ============================================ */
+.about-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.about-features-grid {
+    justify-content: center;
+}
+
+.about-features-grid .feature-card {
+    text-align: center;
+    width: 100%;
+    max-width: 329px;
+}
+
+/* ============================================
+   ADMIN DASHBOARD RESPONSIVE
+   ============================================ */
+.admin-stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.admin-table-wrapper {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.admin-table th {
+    color: var(--color-text-light);
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.admin-table td {
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ============================================
+   PROPERTY DETAIL PAGE IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .about-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-rent-buy {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .carousel-main {
+        height: 280px;
+    }
+
+    .carousel-thumbnails img {
+        width: 60px;
+        height: 45px;
+    }
+
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .broker-card {
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .broker-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .broker-name {
+        font-size: 20px;
+    }
+
+    .broker-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-broker-primary,
+    .btn-broker-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   OFFERS SECTION IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .offers-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .offers-nav {
+        justify-content: center;
+    }
+
+    .offers-grid {
+        flex-direction: column;
+    }
+
+    .property-card-landing {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .card-image {
+        height: 220px;
+    }
+}
+
+/* ============================================
+   FILTER & SEARCH IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .filter-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-search-primary {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+
+    .btn-pill {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .filter-card {
+        padding: 24px 20px;
+    }
+
+    .filter-inputs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filter-input {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   AUTH MODAL IMPROVEMENTS
+   ============================================ */
+@media (max-width: 576px) {
+    .auth-modal {
+        padding: 32px 24px;
+        max-width: 100%;
+    }
+
+    .auth-card {
+        padding: 32px 20px;
+        border-radius: 20px;
+    }
+
+    .auth-header h1 {
+        font-size: 24px;
+    }
+}
+
+/* ============================================
+   USER DROPDOWN MOBILE FIX
+   ============================================ */
+@media (max-width: 400px) {
+    .user-dropdown {
+        right: -20px;
+        min-width: 220px;
+    }
+}
+
+/* ============================================
+   NEWSLETTER SECTION IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .newsletter-section {
+        padding: 0 16px 48px;
+    }
+
+    .newsletter-card {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .newsletter-card-content h2 {
+        font-size: 24px;
+    }
+
+    .newsletter-card-image {
+        width: 100%;
+        max-width: 240px;
+    }
+}
+
+/* ============================================
+   HERO SECTION SMALL SCREEN FIXES
+   ============================================ */
+@media (max-width: 576px) {
+    .hero {
+        margin: 10px;
+        padding: 32px 16px;
+        border-radius: var(--radius-sm);
+    }
+
+    .hero-title span {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+
+    .features {
+        padding: 48px 16px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .testimonials {
+        padding: 48px 16px;
+    }
+
+    .testimonials-header .section-title {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .testimonial-card {
+        padding: 32px 24px;
+    }
+
+    .quote {
+        font-size: 18px;
+    }
+
+    .newsletter {
+        margin: 32px 10px;
+        padding: 32px 16px;
+    }
+
+    .newsletter-content h2 {
+        font-size: 26px;
+    }
+}
+
+/* ============================================
+   ABOUT PAGE RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .about-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-mission-grid {
+        gap: 24px;
+        margin-bottom: 48px;
+    }
+
+    .about-features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-features-grid .feature-card {
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   ADMIN DASHBOARD RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .admin-stats-bar {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-table-wrapper {
+        padding: 16px;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-stats-bar {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   MY LISTINGS & FAVORITES IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .my-listings-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .my-listings-header .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .property-footer {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .property-footer .btn-secondary-sm {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   CONTACT PAGE IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .contact-page {
+        padding: 24px 0;
+    }
+
+    .contact-title {
+        font-size: 28px;
+    }
+
+    .contact-grid {
+        gap: 24px;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        padding: 24px;
+    }
+
+    .contact-info-item {
+        gap: 12px;
+    }
+
+    .contact-info-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ============================================
+   PROFILE PAGE IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .profile-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .profile-hero-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    .profile-hero-info h2 {
+        font-size: 22px;
+    }
+
+    .profile-stats-modern {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .profile-stat-card {
+        padding: 16px;
+    }
+
+    .profile-stat-card .stat-value {
+        font-size: 22px;
+    }
+
+    .profile-actions-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .profile-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-stats-modern {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ============================================
+   TEAM PAGE IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .team-page {
+        padding: 24px 0;
+    }
+
+    .team-title {
+        font-size: 28px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .team-card {
+        padding: 24px 20px;
+    }
+}
+
+/* ============================================
+   PUBLISH / EDIT PAGE IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .publish-page {
+        padding: 24px 0 48px;
+    }
+
+    .publish-hero {
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+
+    .publish-hero h1 {
+        font-size: 24px;
+    }
+
+    .publish-card-modern {
+        padding: 24px;
+    }
+
+    .publish-section-title {
+        font-size: 16px;
+    }
+
+    .form-row,
+    .form-row-3 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .publish-actions-modern {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .publish-actions-modern .btn-secondary,
+    .publish-actions-modern .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .checkbox-modern {
+        padding: 12px;
+    }
+
+    .image-upload-modern {
+        padding: 24px;
+    }
+
+    .image-upload-preview-modern img {
+        max-height: 200px;
+    }
+}
+
+/* ============================================
+   FOOTER IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 48px 20px 24px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-brand .logo-text {
+        margin-bottom: 12px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-links h4 {
+        margin-bottom: 16px;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        margin-top: 32px;
+    }
+}
+
+/* ============================================
+   DELETE MODAL IMPROVEMENTS
+   ============================================ */
+@media (max-width: 576px) {
+    .auth-modal-overlay {
+        padding: 16px;
+    }
+
+    .auth-modal h3 {
+        font-size: 18px;
+    }
+
+    .auth-modal p {
+        font-size: 14px;
+    }
+
+    .auth-modal > div:last-child {
+        flex-direction: column;
+    }
+
+    .auth-modal .btn-secondary,
+    .auth-modal .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   GENERAL UTILITIES
+   ============================================ */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 0 16px;
+    }
+
+    .content {
+        padding: 0 !important;
+    }
+
+    .page {
+        overflow-x: hidden;
+    }
+}
+
+/* ============================================
+   TABLET LANDSCAPE FIXES (768px - 992px)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 992px) {
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-mission-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

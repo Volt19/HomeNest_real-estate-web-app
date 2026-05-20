@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeNest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41209915654990ff774f1f862950eaff8fdc5f0b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+241f32e439a4f7798f2603decf940b231413f9e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeNest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeNest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

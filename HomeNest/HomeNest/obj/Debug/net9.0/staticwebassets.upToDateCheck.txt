@@ -76,6 +76,7 @@ wwwroot\lib\bootstrap\dist\js\bootstrap.js
 wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\uploads\27a1ef64-9508-4008-81aa-f206dddd13ec.jpg
 wwwroot\uploads\2d1d6b28-68a6-49e6-b000-f3774bee8fee.jpg
 wwwroot\uploads\83efcce3-eac4-4b52-ba8a-551d321772db.jpg
 wwwroot\uploads\97bfc39a-a20e-4a46-99ba-9a33b68f9889.jpg
